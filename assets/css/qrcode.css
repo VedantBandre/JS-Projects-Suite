@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* ================= Theme ================= */
+:root {
+  /* Surfaces */
+  --panel-bg: rgba(30, 26, 15, 0.92);         /* deep warm glass */
+  --panel-border: rgba(255, 255, 255, 0.18);
+  --panel-shadow: 0 6px 18px rgba(25, 20, 10, 0.45);
+
+  /* Text */
+  --text: #f5f7eb;                            /* warm near-white */
+  --text-muted: #e6edc9;                      /* soft label text */
+  --text-on-light: #0f172a;                   /* for inputs/QR canvas */
+
+  /* Accents */
+  --accent: #2e5a0b;                          /* deep olive */
+  --accent-hover: #3b7410;
+  --accent-active: #2a520a;
+  --secondary: #4c5616;                       /* olive/khaki */
+  --secondary-hover: #5d6b1b;
+
+  /* Focus ring */
+  --focus: #90c63a;                           /* bright lime */
+
+  /* Inputs & QR canvas */
+  --input-bg: #ffffff;
+  --placeholder: #6b7280;
+  --qr-bg: #ffffff;
+  --qr-border: rgba(0, 0, 0, 0.06);
+}
+
+/* ================ Base / Page ================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;                 /* center the card */
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #352e00, #bdcf63);
+  color: var(--text);
+}
+
+/* ================ Card Container ================ */
+.box {
+  width: min(92vw, 36rem);
+  border: 1px solid var(--panel-border);
+  padding: 20px;
+  border-radius: 16px;
+  background-color: var(--panel-bg);
+  box-shadow: var(--panel-shadow);
+}
+
+/* ================ Header ================ */
+.qr-header {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.qr-header h1 {
+  text-align: center;
+  color: var(--text);
+  font-size: 32px;
+}
+
+.qr-header input[type="text"] {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: var(--input-bg);
+  color: var(--text-on-light);
+  font-weight: 700;
+  font-size: 18px;
+  padding: 12px 14px;
+  border-radius: 10px;
+}
+
+.qr-header input::placeholder {
+  color: var(--placeholder);
+}
+
+/* size row (label + select) */
+.qr-header > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qr-header label {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+#sizes {
+  flex: 1;
+  border: 1px solid var(--panel-border);
+  background: rgba(30, 26, 15, 0.6);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#sizes:focus {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* ================ QR Display Area ================ */
+.qr-body {
+  display: grid;
+  place-items: center;
+  background: var(--qr-bg);
+  border-radius: 12px;
+  padding: 12px;
+  min-height: 140px;               /* visible area before generation */
+  margin: 10px 0 16px;
+  box-shadow: inset 0 0 0 1px var(--qr-border);
+}
+
+/* Ensure the generated element centers nicely */
+.qr-body canvas,
+.qr-body img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+/* ================ Footer / Buttons ================ */
+.qr-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* Shared button styles (applied to <a>) */
+.qr-footer a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 12px 14px;
+  font-weight: 800;
+  font-size: 16px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.15);
+  transition: background-color 0.2s ease, transform 0.05s ease, box-shadow 0.2s ease;
+}
+
+/* Primary: Generate */
+#generateBtn {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+#generateBtn:hover { background-color: var(--accent-hover); }
+#generateBtn:active { background-color: var(--accent-active); transform: translateY(1px); }
+#generateBtn:focus  {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+/* Secondary: Download */
+#downloadBtn {
+  background-color: var(--secondary);
+  color: #f3f6dc;
+  border: 1px solid var(--panel-border);
+}
+#downloadBtn:hover { background-color: var(--secondary-hover); }
+#downloadBtn:active { transform: translateY(1px); }
+#downloadBtn:focus  {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+/* Disabled state helper (optional) */
+.qr-footer a.disabled {
+  pointer-events: none;
+  opacity: 0.55;
+  box-shadow: none;
+}
+
+/* ================ Small screens ================ */
+@media (max-width: 420px) {
+  .qr-footer { grid-template-columns: 1fr; }
+}

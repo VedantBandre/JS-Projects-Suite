@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Space Mono + Material Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/pw_gen.css">
+  <title>Password Generator</title>
+</head>
+<body>
+  <div class="generator">
+    <h3 class="panel-title">Password Generator</h3>
+
+    <!-- Output + copy -->
+    <div class="inputBox">
+      <input type="text" id="passwordOutput" class="passBox" disabled placeholder="Click Generate…">
+      <button id="copyIcon" class="iconBtn" title="Copy to clipboard" aria-label="Copy password">
+        <span class="material-icons">content_copy</span>
+      </button>
+    </div>
+
+    <!-- Slider -->
+    <input type="range" min="4" max="30" value="12" id="inputSlider" class="range">
+
+    <!-- Length row -->
+    <div class="row">
+      <p class="muted">Password Length</p>
+      <span id="sliderValue" class="value">12</span>
+    </div>
+
+    <!-- Options -->
+    <div class="options">
+      <label class="opt">
+        <span>Include Lowercase Letters (a–z)</span>
+        <input type="checkbox" id="lowercase" checked>
+      </label>
+      <label class="opt">
+        <span>Include Uppercase Letters (A–Z)</span>
+        <input type="checkbox" id="uppercase" checked>
+      </label>
+      <label class="opt">
+        <span>Include Numbers (0–9)</span>
+        <input type="checkbox" id="numbers" checked>
+      </label>
+      <label class="opt">
+        <span>Include Symbols (@-*)</span>
+        <input type="checkbox" id="symbols" checked>
+      </label>
+    </div>
+
+    <button type="button" id="genBtn" class="primaryBtn">Generate Password</button>
+  </div>
+
+  <script src="assets/js/pw_gen.js"></script>
+</body>
+</html>
