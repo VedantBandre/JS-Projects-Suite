@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- Space Mono + Material Icons -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -15,7 +15,7 @@
   <div class="generator">
     <h3 class="panel-title">Password Generator</h3>
 
-    <!-- Output + copy -->
+    
     <div class="inputBox">
       <input type="text" id="passwordOutput" class="passBox" disabled placeholder="Click Generate…">
       <button id="copyIcon" class="iconBtn" title="Copy to clipboard" aria-label="Copy password">
@@ -23,16 +23,16 @@
       </button>
     </div>
 
-    <!-- Slider -->
+    
     <input type="range" min="4" max="30" value="12" id="inputSlider" class="range">
 
-    <!-- Length row -->
+    
     <div class="row">
       <p class="muted">Password Length</p>
       <span id="sliderValue" class="value">12</span>
     </div>
 
-    <!-- Options -->
+    
     <div class="options">
       <label class="opt">
         <span>Include Lowercase Letters (a–z)</span>

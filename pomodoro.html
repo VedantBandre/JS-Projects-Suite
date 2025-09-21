@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- Fonts & Styles -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/pomodoro.css">
   <title>Pomodoro</title>
@@ -13,14 +13,14 @@
   <div class="panel">
     <h3 class="panel-title">Pomodoro</h3>
 
-    <!-- Mode tabs -->
+
     <div class="modes" role="tablist" aria-label="Timer modes">
       <button class="tab active" data-mode="focus" role="tab" aria-selected="true">Focus</button>
       <button class="tab" data-mode="short" role="tab" aria-selected="false">Short Break</button>
       <button class="tab" data-mode="long"  role="tab" aria-selected="false">Long Break</button>
     </div>
 
-    <!-- Progress ring + time -->
+
     <div class="ring-wrap" aria-live="polite">
       <svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
         <circle class="track" cx="60" cy="60" r="54"></circle>
@@ -30,14 +30,14 @@
       <div class="cycle" id="cycleLabel">Cycle 1 • Focus</div>
     </div>
 
-    <!-- Controls -->
+
     <div class="controls">
       <button id="startPause" class="btn primary">Start</button>
       <button id="reset" class="btn">Reset</button>
       <button id="skip" class="btn">Skip</button>
     </div>
 
-    <!-- Settings -->
+
     <div class="settings">
       <div class="row">
         <label>Focus (min)</label>
